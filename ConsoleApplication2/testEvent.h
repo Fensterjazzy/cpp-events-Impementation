@@ -17,7 +17,7 @@ public:
 	void Encode() {
 
 		std::cout << "encoding" << std::endl;
-		onEncoded();
+		onEncoded(); /// notify Event subscribers 
 	}
 
 	std::string ToString()
