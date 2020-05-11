@@ -13,4 +13,4 @@ public:
 	}
 };
 
-typedef Object* object;
+using object = Object*;
