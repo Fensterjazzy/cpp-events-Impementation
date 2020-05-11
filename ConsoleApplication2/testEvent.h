@@ -1,10 +1,5 @@
 #pragma once
 
-#include <iostream>
-#include <string>
-#include<list>
-#include<functional>
-
 #include "Event.h"
 
 class testEvent
