@@ -2,6 +2,7 @@
 
 #include "eventArgs.h"
 #include<list>
+#include "object.h"
 
 ///template<class TEvent> 
 ///Generics to be implemented...
@@ -9,8 +10,7 @@ class event
 {
 
 protected:
-	typedef void* object;
-	using funcptr = void (*) (object, EventArgs* args);
+	using funcptr = void (*) (object source, EventArgs* args);
 
 private:
 

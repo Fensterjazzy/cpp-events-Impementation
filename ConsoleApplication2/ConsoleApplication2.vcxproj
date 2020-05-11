@@ -154,6 +154,7 @@
   <ItemGroup>
     <ClInclude Include="Event.h" />
     <ClInclude Include="eventArgs.h" />
+    <ClInclude Include="object.h" />
     <ClInclude Include="testEvent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

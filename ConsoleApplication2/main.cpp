@@ -8,10 +8,10 @@ class message1 {
 
 public:
 
-	static void cal(void* object, EventArgs* args)
+	static void cal(object source, EventArgs* args)
 	{
 		std::cout << "from message1";
-		std::cout << static_cast<testEvent*>(object)->ToString() << " " << args->name << std::endl;
+		std::cout << source->ToString() << " " << args->name << std::endl;
 	}
 
 };
@@ -20,18 +20,18 @@ class message2 {
 
 public:
 
-	static void cal(void* object, EventArgs* args)
+	static void cal(object source, EventArgs* args)
 	{
 		std::cout << "from message2";
-		std::cout << static_cast<testEvent*>(object)->ToString() << " " << args->name << std::endl;
+		std::cout << source->ToString() << " " << args->name << std::endl;
 	}
 
 };
 
-void cal(void* object, EventArgs* args)
+void cal(object source, EventArgs* args)
 {
 	std::cout << "from Regular function";
-	std::cout << static_cast<testEvent*>(object)->ToString() << " " << args->name << std::endl;
+	std::cout << source->ToString() << " " << args->name << std::endl;
 }
 
 int main()

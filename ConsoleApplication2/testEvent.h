@@ -2,12 +2,15 @@
 
 #include "Event.h"
 
-class testEvent
+class testEvent : Object
 {
 
 public:
 	event encodeit;
 
+	testEvent() : Object() {
+
+	}
 
 	void Encode() {
 
@@ -15,7 +18,7 @@ public:
 		onEncoded(); /// notify Event subscribers 
 	}
 
-	std::string ToString()
+	std::string ToString() override
 	{
 		return "testEvent";
 	}
@@ -30,6 +33,8 @@ private:
 		}
 
 	}
+
+
 
 };
 
