@@ -1,6 +1,5 @@
 #include <iostream>
 #include<list>
-#include<functional>
 #include"testEvent.h"
 
 
@@ -8,7 +7,7 @@ class message1 {
 
 public:
 
-	static void cal(object source, EventArgs* args)
+	static void cal(object source, EventArgs args)
 	{
 		std::cout << "from message1";
 		std::cout << source->ToString() << " " << args->name << std::endl;
@@ -20,7 +19,7 @@ class message2 {
 
 public:
 
-	static void cal(object source, EventArgs* args)
+	static void cal(object source, EventArgs args)
 	{
 		std::cout << "from message2";
 		std::cout << source->ToString() << " " << args->name << std::endl;
@@ -28,7 +27,7 @@ public:
 
 };
 
-void cal(object source, EventArgs* args)
+void cal(object source, EventArgs args)
 {
 	std::cout << "from Regular function";
 	std::cout << source->ToString() << " " << args->name << std::endl;

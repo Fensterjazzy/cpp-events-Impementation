@@ -10,7 +10,7 @@ void event::Add(funcptr func)
 	handleEvent.push_back(func);
 }
 
-void event::operator() (object source, EventArgs* args)
+void event::operator() (object source, EventArgs args)
 {
 
 	eventIterator = handleEvent.begin();

@@ -1,11 +1,11 @@
 #pragma once
 #include <string>
-class EventArgs
+class Event_Args
 {
 
 public:
 
-	EventArgs(std::string na)
+	Event_Args(std::string na)
 	{
 		this->name = na;
 	}
@@ -15,3 +15,5 @@ public:
 	std::string name;
 
 };
+
+using EventArgs = Event_Args*;

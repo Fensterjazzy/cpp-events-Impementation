@@ -29,7 +29,7 @@ private:
 
 		if (!encodeit.isEmpty())
 		{
-			encodeit(this, new EventArgs("default"));
+			encodeit(this, new Event_Args("default"));
 		}
 
 	}

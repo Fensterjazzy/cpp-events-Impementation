@@ -10,7 +10,7 @@ class event
 {
 
 protected:
-	using funcptr = void (*) (object source, EventArgs* args);
+	using funcptr = void (*) (object source, EventArgs args);
 
 private:
 
@@ -25,7 +25,7 @@ public:
 
 	void Add(funcptr func);
 
-	void operator() (object source, EventArgs* args);
+	void operator() (object source, EventArgs args);
 
 	bool isEmpty();
 };
