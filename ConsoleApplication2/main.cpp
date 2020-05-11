@@ -37,13 +37,14 @@ void cal(void* object, EventArgs* args)
 int main()
 {
 
-	testEvent mytestevent;
+	testEvent mytestevent; /// publisher
+
 	message1 testMessage1;
 	message2 testMessage2;
 
-	mytestevent.encodeit += testMessage1.cal;
-	mytestevent.encodeit += testMessage2.cal;
-	mytestevent.encodeit += cal;
+	mytestevent.encodeit += testMessage1.cal; //subscriber
+	mytestevent.encodeit += testMessage2.cal; //subscriber
+	mytestevent.encodeit += cal; //subscriber
 
 	mytestevent.Encode();
 
