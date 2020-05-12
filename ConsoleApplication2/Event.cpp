@@ -21,6 +21,11 @@ void event::operator() (object source, EventArgs args)
 	}
 }
 
+void event::unSubscribe(funcptr func)
+{
+	handleEvent.remove(func);
+}
+
 bool event::isEmpty()
 {
 	return handleEvent.empty();

@@ -24,6 +24,8 @@ public:
 
 	void Add(funcptr func);
 
+	void unSubscribe(funcptr func);
+
 	void operator() (object source, EventArgs args);  ///object->obeject.h , EventArgs->eventArgs.h
 
 	bool isEmpty();
