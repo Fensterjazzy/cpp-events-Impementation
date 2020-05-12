@@ -56,8 +56,8 @@ int main()
 	mytestevent.encodeit += testMessage2.cal; //subscriber
 	mytestevent.encodeit += cal; //subscriber
 
-	mytestevent.encodeit.unSubscribe(cal); /// remove
-	mytestevent.encodeit.unSubscribe(testMessage2.cal); /// remove
+	mytestevent.encodeit.unSubscribe(cal); /// unsubscribe from event
+	mytestevent.encodeit.unSubscribe(testMessage2.cal); /// unsubscribe from event
 
 	mytestevent.Encode();
 
