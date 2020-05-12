@@ -52,15 +52,24 @@ int main()
 	message1 testMessage1;
 	message2 testMessage2;
 
-	mytestevent.encodeit += testMessage1.cal; //subscriber
-	mytestevent.encodeit += testMessage2.cal; //subscriber
-	mytestevent.encodeit += cal; //subscriber
-
-	mytestevent.encodeit.unSubscribe(cal); /// unsubscribe from event
-	mytestevent.encodeit.unSubscribe(testMessage2.cal); /// unsubscribe from event
-
 	mytestevent.Encode();
 
+	///mytestevent.encodeit.Add(cal); //subscriber
+	/*
+
+
+		message1 testMessage1;
+		message2 testMessage2;
+
+		mytestevent.encodeit += testMessage1.cal; //subscriber
+		mytestevent.encodeit += testMessage2.cal; //subscriber
+		mytestevent.encodeit += cal; //subscriber
+
+		mytestevent.encodeit.unSubscribe(cal); /// unsubscribe from event
+		mytestevent.encodeit.unSubscribe(testMessage2.cal); /// unsubscribe from event
+
+
+		*/
 }
 
 

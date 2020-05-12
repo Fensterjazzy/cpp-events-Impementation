@@ -1,17 +1,20 @@
 #include "Event.h"
 
-void event::operator+=(funcptr func)
+
+template<typename TEvent>
+void event<TEvent>::operator+=(funcptr func)
 {
 	handleEvent.push_back(func);
 }
 
-void event::Add(funcptr func)
+template<typename TEvent>
+void event<TEvent>::Add(funcptr func)
 {
 	handleEvent.push_back(func);
 }
 
-
-void event::operator() (object source, EventArgs args)
+template<typename TEvent>
+void event<TEvent>::operator() (object source, TEvent* args)
 {
 
 	eventIterator = handleEvent.begin();
@@ -22,12 +25,14 @@ void event::operator() (object source, EventArgs args)
 	}
 }
 
-void event::unSubscribe(funcptr func)
+template<typename TEvent>
+void event<TEvent>::unSubscribe(funcptr func)
 {
 	handleEvent.remove(func);
 }
 
-bool event::isEmpty()
+template<typename TEvent>
+bool event<TEvent>::isEmpty()
 {
 	return handleEvent.empty();
 }

@@ -6,8 +6,11 @@
 class testEvent : Object
 {
 
+private:
+	event<Event_Args> encodeit; /// declare event..
+
 public:
-	event encodeit; /// declare event..
+
 
 	testEvent() : Object() {}
 
@@ -26,10 +29,12 @@ private:
 
 	void onEncoded() {
 
+		this->encodeit.isEmpty();
+
 		///if event encodeit is not empty -> has subscribers
-		if (!encodeit.isEmpty())
+		if (!this->encodeit.isEmpty())
 		{
-			encodeit(this, new Event_Args("default"));  /// call event functions for its list...
+			this->encodeit(this, new Event_Args("default"));  /// call event functions for its list		...
 		}
 
 	}

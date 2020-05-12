@@ -6,16 +6,18 @@
 
 ///template<class TEvent> 
 ///Generics to be implemented...
+template<typename TEvent>
 class event
 {
 
 private:
-	using funcptr = void (*) (object source, EventArgs args);
 
-	using EventHandler = std::list<funcptr>;
+	using funcptr = typename void (*) (object source, TEvent* args);
 
-	EventHandler handleEvent;
-	EventHandler::iterator eventIterator;
+	using EventHandler = typename std::list<funcptr>;
+
+	typename std::list<void (*) (object source, TEvent* args)> handleEvent;
+	typename EventHandler::iterator eventIterator;
 
 public:
 
@@ -27,13 +29,13 @@ public:
 #pragma endregion
 
 
-#pragma region UnSubscribe from event
+#pragma region UnSubscribe to event
 	void unSubscribe(funcptr func);
 #pragma endregion
 
-
 #pragma region call all Event Functions
-	void operator() (object source, EventArgs args);  ///object->obeject.h , EventArgs->eventArgs.h
+
+	void operator() (object source, TEvent* args);  ///object->obeject.h , EventArgs->eventArgs.h
 #pragma endregion
 
 
