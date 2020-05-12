@@ -6,11 +6,9 @@
 class testEvent : Object
 {
 
-private:
-	event<Event_Args> encodeit; /// declare event..
-
 public:
 
+	event encodeit; /// declare event..
 
 	testEvent() : Object() {}
 
