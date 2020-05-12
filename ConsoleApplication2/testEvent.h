@@ -2,15 +2,14 @@
 
 #include "Event.h"
 
+///@Brief object base Class for all classes implementing events for the ToString() method call;
 class testEvent : Object
 {
 
 public:
-	event encodeit;
+	event encodeit; /// declare event..
 
-	testEvent() : Object() {
-
-	}
+	testEvent() : Object() {}
 
 	void Encode() {
 
@@ -27,14 +26,12 @@ private:
 
 	void onEncoded() {
 
+		///if event encodeit is not empty -> has subscribers
 		if (!encodeit.isEmpty())
 		{
-			encodeit(this, new Event_Args("default"));
+			encodeit(this, new Event_Args("default"));  /// call event functions for its list...
 		}
 
 	}
-
-
-
 };
 

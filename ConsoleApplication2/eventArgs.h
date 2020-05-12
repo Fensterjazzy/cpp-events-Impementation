@@ -14,6 +14,10 @@ public:
 
 	std::string name;
 
+	~Event_Args() {
+
+	}
+
 };
 
 using EventArgs = Event_Args*;

@@ -3,6 +3,8 @@
 #include"testEvent.h"
 
 
+#pragma region Testclasses for subscribers
+
 class message1 {
 
 public:
@@ -27,11 +29,20 @@ public:
 
 };
 
+#pragma endregion
+
+
+#pragma region Test function for subscribers
+
 void cal(object source, EventArgs args)
 {
 	std::cout << "from Regular function";
 	std::cout << source->ToString() << " " << args->name << std::endl;
 }
+
+#pragma endregion
+
+
 
 int main()
 {

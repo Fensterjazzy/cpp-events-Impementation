@@ -9,10 +9,8 @@
 class event
 {
 
-protected:
-	using funcptr = void (*) (object source, EventArgs args);
-
 private:
+	using funcptr = void (*) (object source, EventArgs args);
 
 	using EventHandler = std::list<funcptr>;
 
@@ -21,11 +19,12 @@ private:
 
 public:
 
+	///@ Brief funcptr = void (*) (object source, EventArgs args);
 	void operator+=(funcptr func);
 
 	void Add(funcptr func);
 
-	void operator() (object source, EventArgs args);
+	void operator() (object source, EventArgs args);  ///object->obeject.h , EventArgs->eventArgs.h
 
 	bool isEmpty();
 };
