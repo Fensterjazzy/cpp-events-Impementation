@@ -10,8 +10,6 @@ public:
 		this->name = na;
 	}
 
-	std::string empty = "";
-
 	std::string name;
 
 	~Event_Args() {
