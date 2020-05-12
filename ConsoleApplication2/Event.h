@@ -27,7 +27,7 @@ public:
 #pragma endregion
 
 
-#pragma region UnSubscribe to event
+#pragma region UnSubscribe from event
 	void unSubscribe(funcptr func);
 #pragma endregion
 
