@@ -33,7 +33,6 @@ public:
 
 
 #pragma region call all Event Functions
-
 	void operator() (object source, EventArgs args);  ///object->obeject.h , EventArgs->eventArgs.h
 #pragma endregion
 
