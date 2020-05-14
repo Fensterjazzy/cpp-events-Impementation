@@ -2,13 +2,33 @@
 
 #include "Event.h"
 
+
+///test
+class myEventArgs : public Event_Args {
+
+public:
+
+	myEventArgs() = default;
+
+	myEventArgs(std::string name) :Event_Args(name) {}
+
+	std::string About{ "Demo test" };
+
+	~myEventArgs()
+	{
+
+	}
+};
+
 ///@Brief object base Class for all classes implementing events for the ToString() method call;
 class testEvent : Object
 {
 
 public:
 
-	event encodeit; /// declare event..
+	///event<Event_Args> encodeit = event<Event_Args>(0); /// declare event..
+
+	event<myEventArgs> encodeit = 3; /// set the number allocated for delegates (subscribers)...
 
 	testEvent() : Object() {}
 
@@ -20,7 +40,7 @@ public:
 
 	std::string ToString() override
 	{
-		return "testEvent";
+		return "DavicsEvent";
 	}
 
 private:
@@ -32,7 +52,7 @@ private:
 		///if event encodeit is not empty -> has subscribers
 		if (!this->encodeit.isEmpty())
 		{
-			this->encodeit(this, new Event_Args("default"));  /// call event functions for its list		...
+			this->encodeit(this, new myEventArgs("my new EventArgs class"));  /// call event functions for its list		...
 		}
 
 	}

@@ -5,6 +5,8 @@ class Event_Args
 
 public:
 
+	Event_Args() = default;
+
 	Event_Args(std::string na)
 	{
 		this->name = na;
