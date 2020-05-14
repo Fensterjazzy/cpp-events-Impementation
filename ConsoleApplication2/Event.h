@@ -4,8 +4,6 @@
 #include "myarray.h"
 #include "object.h"
 
-///
-///Generics to be implemented...
 
 using namespace davics;  ///<<<
 
