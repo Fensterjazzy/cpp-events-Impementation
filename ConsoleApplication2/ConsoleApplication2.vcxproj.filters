@@ -35,5 +35,8 @@
     <ClInclude Include="myarray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="myLinkedList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

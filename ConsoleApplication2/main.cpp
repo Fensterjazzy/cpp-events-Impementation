@@ -1,6 +1,10 @@
 #include <iostream>
 #include"testEvent.h"
 
+#include"myLinkedList.h"
+
+using namespace davicsList;
+
 #pragma region Testclasses for subscribers
 
 class message1 {
@@ -41,19 +45,15 @@ void cal(object source, myEventArgs* args)
 
 #pragma endregion
 
-
-
 int main()
 {
-
 	testEvent mytestevent; /// publisher
 
 	message1 testMessage1;
 	message2 testMessage2;
 
-
 	mytestevent.encodeit += testMessage1.cal; //subscriber
-	mytestevent.encodeit += testMessage2.cal; //subscriber
+	mytestevent.encodeit.Add(testMessage2.cal); //subscriber
 	mytestevent.encodeit += cal; //subscriber
 
 	mytestevent.encodeit.unSubscribe(cal); /// unsubscribe from event
@@ -61,8 +61,8 @@ int main()
 
 	mytestevent.encodeit += cal; //subscriber
 
-
 	mytestevent.Encode();
+
 
 
 }

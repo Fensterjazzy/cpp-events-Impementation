@@ -26,11 +26,9 @@ class testEvent : Object
 
 public:
 
-	///event<Event_Args> encodeit = event<Event_Args>(0); /// declare event..
+	event<myEventArgs> encodeit; /// dynamic event handler
 
-	event<myEventArgs> encodeit = 3; /// set the number allocated for delegates (subscribers)...
-
-	testEvent() : Object() {}
+	testEvent() = default;
 
 	void Encode() {
 

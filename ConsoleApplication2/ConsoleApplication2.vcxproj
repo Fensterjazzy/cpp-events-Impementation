@@ -154,6 +154,7 @@
     <ClInclude Include="Event.h" />
     <ClInclude Include="eventArgs.h" />
     <ClInclude Include="myarray.h" />
+    <ClInclude Include="myLinkedList.h" />
     <ClInclude Include="object.h" />
     <ClInclude Include="testEvent.h" />
   </ItemGroup>

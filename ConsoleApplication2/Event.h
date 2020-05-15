@@ -1,50 +1,28 @@
 #pragma once
 
 #include "eventArgs.h"
-#include "myarray.h"
 #include "object.h"
+#include"myLinkedList.h"
 
 
-using namespace davics;  ///<<<
+
+using namespace davicsList;  ///<<<
 
 template<typename TEvent>
 class event
 {
 
-public:
+private:
 
 	using funcptr = void (*) (object source, typename TEvent* args);
 
-	myarray<funcptr>* handleEvent;
+	LinkedList<funcptr> handleEvent;
 
 public:
 
 	event()
 	{
-		try {
 
-			handleEvent = new myarray<funcptr>(1); /// default value of 1 memory slot for event delegates
-		}
-
-		catch (std::runtime_error e) {
-			std::cout << e.what() << std::endl;
-		}
-	}
-	event(int siz)
-	{
-		try {
-
-			handleEvent = new myarray<funcptr>(siz);  /// set the size of the memory slot for event delegates
-		}
-
-		catch (std::runtime_error e) {
-			std::cout << e.what() << std::endl;
-		}
-	}
-
-	event operator = (const event& other) {
-
-		this = other;
 	}
 
 #pragma region Subscribe to event
@@ -83,55 +61,33 @@ public:
 };
 
 
+#pragma region EvnentFunctions Definitions
+
 template<typename TEvent>
 void event<TEvent>::operator+=(funcptr func)
 {
-	try {
-		handleEvent->Add(func);
-	}
 
-	catch (std::out_of_range e) {
-		std::cout << e.what() << std::endl;
-	}
+	handleEvent.Add(func);
 
-	catch (std::runtime_error e) {
-		std::cout << e.what() << std::endl;
-	}
 }
 
 template<typename TEvent>
 void event<TEvent>::Add(funcptr func)
 {
 
-	try {
-		handleEvent->Add(func);
-	}
-
-	catch (std::out_of_range e) {
-		std::cout << e.what() << std::endl;
-	}
-
-	catch (std::runtime_error e) {
-		std::cout << e.what() << std::endl;
-	}
+	handleEvent.Add(func);
 
 }
 
 template<typename TEvent>
 void event<TEvent>::operator() (object source, typename TEvent* args)
 {
-	try {
+	handleEvent.InitPointer();
 
-		handleEvent->ArrayPtr = handleEvent->begin();
+	for (; handleEvent.getNextPointer() != nullptr; handleEvent.updatePointer())
+	{
+		handleEvent.startPointer(source, args);
 
-		for (int index = 0; index != handleEvent->Position; ++index)
-		{
-			handleEvent->ArrayPtr[index](source, args);
-		}
-	}
-
-	catch (std::runtime_error e) {
-		std::cout << e.what() << std::endl;
 	}
 
 }
@@ -140,28 +96,23 @@ template<typename TEvent>
 void event<TEvent>::unSubscribe(funcptr func)
 {
 	try {
-		handleEvent->Remove(func);
+		handleEvent.deleteNode(func);
 	}
 
-	catch (std::out_of_range e) {
+	catch (std::runtime_error e)
+	{
 		std::cout << e.what() << std::endl;
 	}
 
-	catch (std::runtime_error e) {
-		std::cout << e.what() << std::endl;
-	}
 }
 
 template<typename TEvent>
 bool event<TEvent>::isEmpty()
 {
-	try {
 
-		return handleEvent->empty();
-	}
+	return handleEvent.empty();
 
-	catch (std::runtime_error e) {
-		std::cout << e.what() << std::endl;
-	}
 
 }
+
+#pragma endregion
