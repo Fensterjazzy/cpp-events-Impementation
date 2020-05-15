@@ -12,7 +12,7 @@ namespace davicsList
 		struct Nodes
 		{
 			typename Tvalue data{ nullptr };
-			Nodes* nextNode;
+			Nodes* nextNode{ nullptr };
 		};
 
 		Nodes* headNode{ nullptr };
