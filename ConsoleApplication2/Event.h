@@ -4,8 +4,6 @@
 #include "object.h"
 #include"myLinkedList.h"
 
-
-
 using namespace davicsList;  ///<<<
 
 template<typename TEvent>

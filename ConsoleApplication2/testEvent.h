@@ -20,7 +20,6 @@ public:
 };
 
 
-
 ///@Brief object base Class for all classes implementing events for the ToString() method call;
 class testEvent : Object
 {
