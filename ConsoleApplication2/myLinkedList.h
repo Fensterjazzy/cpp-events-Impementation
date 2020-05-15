@@ -21,8 +21,6 @@ namespace davicsList
 
 #pragma endregion
 
-
-
 	public:
 #pragma region PublicMembers
 
