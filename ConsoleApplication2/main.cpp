@@ -1,8 +1,6 @@
 #include <iostream>
 #include"testEvent.h"
 
-#include"myLinkedList.h"
-
 using namespace davicsList;
 
 #pragma region Testclasses for subscribers

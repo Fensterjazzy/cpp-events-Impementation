@@ -1,7 +1,6 @@
 #pragma once
 #include<string>
 
-
 /// @Brief Interface class for all classes that implements an Event
 
 class Object {
