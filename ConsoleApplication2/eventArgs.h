@@ -5,7 +5,9 @@ class Event_Args
 
 public:
 
-	Event_Args() = default;
+	Event_Args() {
+		name = "";
+	}
 
 	Event_Args(std::string na)
 	{
