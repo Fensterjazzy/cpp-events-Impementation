@@ -99,7 +99,7 @@ void event<TEvent>::unSubscribe(funcptr func)
 
 	catch (std::runtime_error e)
 	{
-		std::cout << e.what() << std::endl;
+		throw e;
 	}
 
 }

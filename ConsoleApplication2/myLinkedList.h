@@ -2,7 +2,6 @@
 
 namespace davicsList
 {
-
 	template<typename Tvalue>
 	class LinkedList
 	{

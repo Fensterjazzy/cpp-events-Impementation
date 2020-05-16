@@ -54,8 +54,18 @@ int main()
 	mytestevent.encodeit.Add(testMessage2.cal); //subscriber
 	mytestevent.encodeit += cal; //subscriber
 
-	mytestevent.encodeit.unSubscribe(cal); /// unsubscribe from event
-	mytestevent.encodeit.unSubscribe(testMessage2.cal); /// unsubscribe from event
+
+	try {
+
+		mytestevent.encodeit.unSubscribe(cal); /// unsubscribe from event
+		mytestevent.encodeit.unSubscribe(testMessage2.cal); /// unsubscribe from event
+
+	}
+
+	catch (std::runtime_error e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 
 	mytestevent.encodeit += cal; //subscriber
 
