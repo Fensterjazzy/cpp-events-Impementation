@@ -1,6 +1,6 @@
 #pragma once
 
-namespace davicsList
+namespace davics
 {
 	template<typename Tvalue>
 	class LinkedList
@@ -141,13 +141,13 @@ namespace davicsList
 			else
 			{
 				traverseNode = headNode;
+				///	PreviousNode = traverseNode;
 
 				while (traverseNode != nullptr && traverseNode->data != value)
 				{
 					PreviousNode = traverseNode;
 					traverseNode = traverseNode->nextNode;
 				}
-
 
 				if (traverseNode)
 				{

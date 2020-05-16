@@ -4,7 +4,6 @@
 #include "object.h"
 #include"myLinkedList.h"
 
-using namespace davicsList;  ///<<<
 
 template<typename TEvent>
 class event
@@ -14,7 +13,7 @@ private:
 
 	using funcptr = void (*) (object source, typename TEvent* args);
 
-	LinkedList<funcptr> handleEvent;
+	davics::LinkedList<funcptr> handleEvent;
 
 public:
 
