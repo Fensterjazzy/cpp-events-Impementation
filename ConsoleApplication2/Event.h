@@ -4,7 +4,6 @@
 #include "object.h"
 #include"myLinkedList.h"
 
-
 template<typename TEvent>
 class event
 {
